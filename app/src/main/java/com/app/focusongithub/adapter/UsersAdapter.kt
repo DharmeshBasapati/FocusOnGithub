@@ -32,9 +32,6 @@ class UsersAdapter(private var usersList: List<Users>, val onItemBookmarked: (In
                 }
 
                 rowItemUsersBinding.ivBookmark.setOnClickListener {
-
-                    isBookmarked = !isBookmarked
-                    notifyItemChanged(position)
                     onItemBookmarked(position)
                 }
 

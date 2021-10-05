@@ -60,7 +60,7 @@ class UsersFragment : Fragment() {
 
     private fun addOrRemoveUserFromBookmarks(pos: Int) {
 
-        if(!usersAdapter.getLatestList()[pos].isBookmarked){
+        if (!usersAdapter.getLatestList()[pos].isBookmarked) {
             usersViewModel.bookmarkThisUser(
                 BookmarkedUsers(
                     usersAdapter.getLatestList()[pos].id,
@@ -68,7 +68,8 @@ class UsersFragment : Fragment() {
                     usersAdapter.getLatestList()[pos].avatar_url
                 )
             )
-        }else{
+            usersAdapter.getLatestList()[pos].isBookmarked = true
+        } else {
             usersViewModel.unBookmarkThisUser(
                 BookmarkedUsers(
                     usersAdapter.getLatestList()[pos].id,
@@ -76,7 +77,10 @@ class UsersFragment : Fragment() {
                     usersAdapter.getLatestList()[pos].avatar_url
                 )
             )
+            usersAdapter.getLatestList()[pos].isBookmarked = false
         }
+
+        usersAdapter.notifyItemChanged(pos)
 
     }
 
