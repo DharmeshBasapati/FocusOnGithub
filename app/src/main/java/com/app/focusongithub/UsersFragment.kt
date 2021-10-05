@@ -121,8 +121,8 @@ class UsersFragment : Fragment() {
 
     }
 
-    private fun updateUsersList(it1: List<Users>) {
-        usersAdapter.addUsers(it1)
+    private fun updateUsersList(normalUsersList: List<Users>) {
+        usersAdapter.addUsers(normalUsersList)
     }
 
 }

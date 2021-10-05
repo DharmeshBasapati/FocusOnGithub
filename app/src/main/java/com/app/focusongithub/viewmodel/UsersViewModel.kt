@@ -41,16 +41,13 @@ class UsersViewModel(private val focusDao: FocusDao) : ViewModel() {
                 override fun onFailure(call: Call<List<Users>>, t: Throwable) {
                     users.postValue(Resource.error(null, t.message))
                 }
-            }
-
-
-            )
+            })
 
         }
 
     }
 
-    fun bookmarkThisUser(bookmarkedUsers: BookmarkedUsers){
+    fun bookmarkThisUser(bookmarkedUsers: BookmarkedUsers) {
 
         viewModelScope.launch(Dispatchers.IO) {
 
@@ -60,7 +57,7 @@ class UsersViewModel(private val focusDao: FocusDao) : ViewModel() {
 
     }
 
-    fun unBookmarkThisUser(bookmarkedUsers: BookmarkedUsers){
+    fun unBookmarkThisUser(bookmarkedUsers: BookmarkedUsers) {
 
         viewModelScope.launch(Dispatchers.IO) {
 
@@ -74,7 +71,7 @@ class UsersViewModel(private val focusDao: FocusDao) : ViewModel() {
 
     fun getBookMarkedUsers(): LiveData<List<BookmarkedUsers>> = bookMarkedUsers
 
-    fun fetchBookmarkedUsersFromDB(){
+    fun fetchBookmarkedUsersFromDB() {
 
         viewModelScope.launch(Dispatchers.IO) {
 
