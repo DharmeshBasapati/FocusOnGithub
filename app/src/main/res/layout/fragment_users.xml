@@ -8,6 +8,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvUsers"
         android:layout_width="match_parent"
+        android:layout_margin="10dp"
         tools:listitem="@layout/row_item_users"
         android:layout_height="match_parent" />
 

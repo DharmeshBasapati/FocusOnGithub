@@ -28,6 +28,7 @@ class UsersFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+
         binding = FragmentUsersBinding.inflate(layoutInflater)
 
         setupUI()
